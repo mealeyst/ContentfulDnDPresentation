@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/blood.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Introduction -->
+        <section>
+          <h2>Conquering Custom UI with React</h2>
+          <hr />
+          <h3>Dungeons & Dragons in Contentful</h3>
+          <small>Shawn Mealey</small>
+          <aside class="notes">
+            Good evening everyone, thank you so much for attending tonight's meetup and welcome to Rockets of Awesome's offices. Before we start getting into the bones of this presentation, by show of hands how many of you are familiar with Contentful? How many are familiar with React? How many of you are familiar with Dungeons & Dragons?
+            (give feedback to the audience: "Perfect, oh man I love this crowd!", "Alright, very cool got some people with some experience here")
+
+            Alright well in order for us to do a presentation with Dungeons & Dragons justice, we need to do this set the scene!
+
+            (Begin to play fantasy music)
+
+            Our story begins in a long, warmly lit office only a floor above the hustle and bustle of Park Avenue. The sun has already set in the sky and only a handful of people remain seated at the long series of desks that line the length of the office. One of the individuals at their desk looks up from composing an email as suddenly one of her colleagues briskly jogs from the kitchen, three bottles of beer clutched in either of his hands. As he approaches one of the conference rooms, anther co-worker of his slides open the door with a smile as fantasy music pours out from the room. He joins a handful of other friends and co-workers as they sit around the conference table; pizza, chicken wings, and dice of all various shapes and sizes clutter the table At the end of the table; a young, flustered man sits behind a computer monitor and his laptop. As he hurriedly collects a handful of dice, pieces of paper and hand crafted cardboard cutouts of rats, brigands, and wolves he finally looks up with a sly smile. He clears his throat and begins to narrate to the table.
+
+            "Alright guys, I think we are all here! So, if you remember in our last session we left off in the small outland town of Gordorf. After the party valiantly defended the townsfolk from a large bandit incursion you were  thanked gratefully by the townsfolk. Having received your handsome reward..."
+
+            One of the players at the table raises their head.
+
+            "Wait, what? Did we get money last session?"
+
+            Another player laughs and leans back in their chair setting down their slice of pizza.
+
+            "Yeah dude, we all got two gold each and we leveled up"
+
+            Another player towards the back of the table raises their head in utter horror.
+
+            "Wait we leveled up!? I haven't picked out any new spells"
+
+            As the table spirals into cross talk, the young man behind the computer monitor sighs inwardly as he can feel the strands of the story that he was weaving begin to fade away into the ether, and together with the help of his friends they spend an additional fifteen minutes helping to get everyone situated and settled in for the night's session.
+
+            Welcome to the world of being a Dungeon Master for Dungeons and Dragons!
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h1>Who am I?</h1>
+          </section>
+          <section>
+            <img class="stretch" alt="Shawn with sword" src="./img/GameOfThronesShawn.jpg" />
+            <h3>Shawn Mealey</h3>
+            Engineer at Rockets of Awesome
+          </section>
+          <section>
+            (Also Rockets of Awesome's Dungeon Master)
+          </section>
+        </section>
+
+        <!--Why Dungeons & Dragons-->
+        <section>
+          <section>
+            <h2>You might be asking yourself why...</h2>
+            <img class="stretch" alt="Dungeon & Dragons Logo" src="http://www.enworld.org/forum/attachment.php?s=f21b1f65402d303eb718ebd4dbc431b0&attachmentid=62509&d=1404384594&stc=1" />
+            <aside class="notes">
+              In the sake of brevity, I am only going to give a high level overview of how Dungeons & Dragons work. The Dungeon Master and his group of players work together to create a narrative whose outcomes are determined by rolling dice and referencing what is called a character sheet.
+              The character sheet is one of the most important parts of the game itself. It’s a reference sheet that indicates how well a character can perform a certain action. This can be anything from convincing a guard to let players pass without paying a toll, to what spells a player can cast, to what equipment and wealth a player has.
+            </aside>
+          </section>
+          <section>
+            <h2>The character sheet is a rather complex.</h2>
+          </section>
+          <section>
+              <h1>Don't beleive me?</h1>
+          </section>
+          <section>
+              <img class="stretch" alt="Character Sheet Filled Out" src="./img/CharacterSheetExample.png" />
+          </section>
+          <section>
+            <img class="stretch" src="https://media.giphy.com/media/x5PYnCWwWDED6/giphy.gif" />
+            <h4>Thats a lot of information to keep track of!</h4>
+          </section>
+        </section>
+
+        <!--Why Contentful?-->
+        <section>
+          <section>
+            <h2>Enter</h2>
+            <img style="padding: 20px; background-color: rgba(255, 255, 255, 0.9);" src="https://stitch-microverse.s3.amazonaws.com/uploads/integrations/127349-f5b4295f-36b6-495c-8642-3f7e11ea00a8-logodarkfont-original-1397122761.png"/>
+          </section>
+          <section>
+            Contentful offers range of helpful data fields which are easy to set up!
+          </section>
+          <section>
+            <h3>Let's build a character sheet application!</h3>
+            <a class="fragment fade-in" href="https://app.contentful.com/spaces/8u8ndjas9sa9/content_types">My First Character Sheet Project</a>
+          </section>
+          <section>
+            <img alt="This is too much!" src="https://media.giphy.com/media/2aIZfQdC2V7bBvU5t2/giphy.gif" />
+          </section>
+          <section>
+            <h3>The Problem:</h3>
+            <ul>
+              <li class="fragment fade-in">Content Models/Types can become bloated</li>
+              <li class="fragment fade-in">Fields might not provide enough flexibiliy</li>
+              <li class="fragment fade-in">The JSON field while flexible, isn't user friendly</li>
+            </ul>
+          </section>
+          <section>
+            <img class="stretch" alt="using the standard JSON field" src="./img/json_field.gif" />
+          </section>
+          <section>
+            <img class="stretch" alt="WHY?" src="https://media.giphy.com/media/l2JhtKtDWYNKdRpoA/giphy.gif" />
+          </section>
+          <section>
+            <h3>The Solution:</h3>
+            <h2 class="fragment fade-in">Extensions!</h2>
+          </section>
+          <section>
+            Contentful allows for the ability to add extensions. We can use this ability to create a new inteface for the JSON field!
+          </section>
+          <section>
+            <h3><a href="https://app.contentful.com/spaces/083iackk2fst/content_types">Round Two!</a></h3>
+          </section>
+          <section>
+            <img alt="Feels good man" src="https://media.giphy.com/media/d7c56SbLa9PRC/giphy.gif" />
+          </section>
+        </section>
+
+        <!--Create Contententful Extension Setup-->
+        <section>
+          <section>
+            <h3>How does one get started?</h3>
+            <div class="fragment fade-in">
+              Using the Contentful Extension CLI Tool, it's only 7 steps!
+            </div>
+          </section>
+          <section>
+            <img class="stretch" alt="warning" src="https://media.giphy.com/media/IT6kBZ1k5oEeI/giphy.gif" />
+            <h4>We are going to the terminal</h4>
+          </section>
+          <section>
+            Step 1: Install the Create Contentful Extension CLI Tool
+            <pre>
+              <code data-trim data-noescape>
+                $npm install create-contentful-extension;
+                $npx @contentful/create-contentful-extension example-extension
+              </code>
+            </pre>
+            <div class="fragment fade-in">
+              <hr />
+              Step 2: Select the Field extension type.
+              <pre>
+                <code data-trim data-noescape>
+                  ? Select type of extension: (Use arrow keys)
+                  ❯ Field extension
+                    Sidebar extension
+                </code>
+              </pre>
+            </div>
+            <aside class="notes">
+              Users need the following:
+              <ul>
+                <li>Node 8 or higher</li>
+                <li>NPM 5.2 and higher</li>
+            </aside>
+          </section>
+          <section>
+            Step 3: Select the field type that you are creating the interface for (Object in our case).
+            <pre>
+              <code data-trim data-noescape>
+                ? Select field types for this extension:
+                 ◯ Number
+                 ◯ Date
+                 ◯ Boolean
+                ❯◉ Object
+                 ◯ Entry
+                 ◯ Entries
+                 ◯ Asset
+             </code>
+           </pre>
+           <div class="fragment fade-in">
+             <hr />
+             Step 4: Select your JavaScript flavor!
+             <pre>
+               <code data-trim data-noescape>
+                 ? What language you want to use to develop extension: (Use arrow keys)
+                 ❯ JavaScript
+                   TypeScript
+               </code>
+             </pre>
+           </div>
+          </section>
+          <section>
+              Step 5: Install your dependencies:
+            <pre>
+              <code data-trim data-noescape>
+                npm install
+              </code>
+            </pre>
+            <div class="fragment fade-in">
+              <hr />
+              Step 6: Be sure to login to your contentful instance and add your spaceID as well as environmentID
+              <pre>
+                <code data-trim data-noescape>
+                  npm run login && npm run configure
+                </code>
+              </pre>
+            </div>
+          </section>
+          <section>
+            Step 7: Start the server and start developing!
+            <pre>
+              <code data-trim data-noescape>
+                npm start
+              </code>
+            </pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Using Forma36</h1>
+            To avoid reinventing the wheel, checkout <a href="https://f36-storybook.contentful.com/">Forma36</a> a collection of ready to use React Components built by Contentful!
+          </section>
+          <section>
+            <img class="stretch" alt="Dance Party" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" />
+          </section>
+          <section>
+            <h2>Demo time!</h2>
+            Let's try to quickly create our own extension!
+          </section>
+        </section>
+  </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
